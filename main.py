@@ -78,7 +78,7 @@ async def diamonds(curr: models.User_Pydantic = Depends(get_current_user)):
 async def create_user(user: models.UserIn_Pydantic = Depends(models.CreateUser)):
     FILEPATH = './static/users/'
     filename = user.avatar.filename
-    extension = filename.split(".")[-1]
+    extension = filename.split(".")[-1]05.6
     if extension not in ['png', 'jpg']:
         return {"error": 'File extension not allowed'}
     token_name = secrets.token_hex(10) + '.' + extension
